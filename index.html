@@ -179,6 +179,74 @@
       color: #ccc;
     }
 
+    /* Contact Section */
+    #contact {
+      animation: fadeInUp 1s ease forwards;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #contact h2 {
+      margin-bottom: 20px;
+      color: #eee;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 6px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: #1a1a1a;
+      padding: 25px 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 16px 2px #f0f0f055;
+      color: #ddd;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #ccc;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #2a2a2a;
+      color: #eee;
+      resize: vertical;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: 2px solid #e0e0e0;
+      background-color: #3a3a3a;
+      color: #fff;
+    }
+    button {
+      cursor: pointer;
+      padding: 12px 18px;
+      background-color: #e0e0e0;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      color: #121212;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+    button:hover {
+      background-color: #c0c0c0;
+      transform: scale(1.05);
+    }
+
     /* Footer */
     footer {
       background: #1a1a1a;
@@ -244,6 +312,9 @@
       .project {
         padding: 15px 20px;
       }
+      form {
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
@@ -255,6 +326,7 @@
     <a href="#" class="menu-link active" data-section="about">About Me</a>
     <a href="#" class="menu-link" data-section="skills">Skills</a>
     <a href="#" class="menu-link" data-section="projects">Projects</a>
+    <a href="#" class="menu-link" data-section="contact">Contact</a>
   </nav>
 </header>
 
@@ -306,6 +378,23 @@
       <p>A responsive and clean portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
     </div>
   </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm" action="#" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
 </main>
 
 <footer>
@@ -329,6 +418,14 @@
       link.classList.add('active');
       document.getElementById(target).classList.add('active');
     });
+  });
+
+  // Optional: handle form submission here if you want, currently it just prevents page reload
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for reaching out! Your message has been sent.');
+    contactForm.reset();
   });
 </script>
 
