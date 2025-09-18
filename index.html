@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Suriya S | Portfolio</title>
   <style>
-    /* Reset */
+   
     * {
       margin: 0;
       padding: 0;
@@ -247,7 +247,7 @@
       transform: scale(1.05);
     }
 
-    /* Footer */
+    
     footer {
       background: #1a1a1a;
       color: #ccc;
@@ -259,7 +259,6 @@
       animation: glowText 4s ease-in-out infinite alternate;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
@@ -379,7 +378,7 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  
   <section id="contact">
     <h2>Contact Me</h2>
     <form id="contactForm" action="#" method="POST">
@@ -410,17 +409,16 @@
       e.preventDefault();
       const target = link.dataset.section;
 
-      // Remove active class from all links and sections
+
       menuLinks.forEach(l => l.classList.remove('active'));
       sections.forEach(sec => sec.classList.remove('active'));
 
-      // Add active to clicked link and corresponding section
+  
       link.classList.add('active');
       document.getElementById(target).classList.add('active');
     });
   });
 
-  // Optional: handle form submission here if you want, currently it just prevents page reload
   const contactForm = document.getElementById('contactForm');
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -431,4 +429,5 @@
 
 </body>
 </html>
+
 
